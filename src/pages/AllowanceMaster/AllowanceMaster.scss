@@ -1,0 +1,97 @@
+.allowance-wrapper {
+  padding: 40px;
+  background: #fdfbf3;
+  min-height: 100vh;
+}
+
+.allowance-card {
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: 16px;
+  padding: 20px;
+  background: white;
+
+  .title {
+    font-weight: 700;
+    color: #1a1a1a;
+  }
+
+  label {
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+
+//   select,
+//   input {
+//     height: 42px;
+//     border-radius: 10px;
+//     border: 1px solid #d8d8d8;
+//     padding-left: 10px;
+
+//     &:focus {
+//       border-color: #5a76ff !important;
+//       box-shadow: 0 0 0 3px rgba(90, 118, 255, 0.25);
+//     }
+//   }
+
+  .period-label {
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+
+    input {
+      margin-right: 6px;
+    }
+  }
+
+  .radio-label {
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+
+    input {
+      margin-right: 6px;
+    }
+  }
+
+  .value-input {
+    width: 120px;
+    margin-right: 10px;
+  }
+
+  .percent-symbol {
+    font-size: 20px;
+    margin-right: 10px;
+    font-weight: 600;
+  }
+
+  .add-btn {
+    background: #5a569a !important;
+    border: none;
+    padding: 8px 18px;
+
+    &:hover {
+      background: #45407f !important;
+    }
+  }
+
+  .view-btn {
+    background: #585b92 !important;
+    border: none;
+    padding: 8px 20px;
+
+    &:hover {
+      background: #3d4070 !important;
+    }
+  }
+
+  .data-table {
+    max-width: 350px;
+
+    td {
+      padding: 10px 15px;
+      font-size: 15px;
+      font-weight: 500;
+    }
+  }
+}

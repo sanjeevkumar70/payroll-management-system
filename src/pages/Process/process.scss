@@ -1,0 +1,49 @@
+.process-wrapper {
+  padding: 40px;
+  background: #fdfbf3;
+  min-height: 100vh;
+}
+
+.process-card {
+  max-width: 900px;
+  margin: 0 auto;
+  border-radius: 16px;
+  padding: 25px;
+  background: #ffffff;
+
+  .title {
+    font-weight: 700;
+    color: #1a1a1a;
+  }
+
+  label {
+    font-weight: 600;
+  }
+
+  input,
+  select {
+    // height: 44px;
+    border-radius: 10px;
+    border: 1px solid #d8d8d8;
+    padding-left: 10px;
+
+    &:focus {
+      border-color: #6c79d3 !important;
+      box-shadow: 0 0 0 3px rgba(108, 121, 211, 0.25);
+    }
+  }
+
+  .process-btn {
+    background: #585b92 !important;
+    border: none;
+
+    &:hover {
+      background: #484a79 !important;
+    }
+  }
+
+  .section-title {
+    font-weight: 700;
+    color: #222;
+  }
+}
