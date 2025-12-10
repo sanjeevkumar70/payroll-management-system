@@ -1,17 +1,9 @@
 // pages/UploadDocuments.js
 
-import React, { useState } from "react";
-import {
-  Card,
-  CardBody,
-  Row,
-  Col,
-  Input,
-  Label,
-  Button
-} from "reactstrap";
-import { BsDownload } from "react-icons/bs";
 import "./UploadDocuments.scss";
+import React, { useState } from "react";
+import { BsDownload } from "react-icons/bs";
+import { Card, CardBody, Row, Col, Input, Label, Button } from "reactstrap";
 
 function UploadDocuments() {
   const months = [
@@ -37,7 +29,7 @@ function UploadDocuments() {
           {/* MONTH + YEAR */}
           <Row className="mb-4">
             <Col md={2}>
-              <Input type="select">
+              <Input type="select" className="select-input">
                 {months.map((m) => (
                   <option key={m}>{m}</option>
                 ))}
@@ -45,7 +37,7 @@ function UploadDocuments() {
             </Col>
 
             <Col md={2}>
-              <Input type="select">
+              <Input type="select" className="select-input">
                 {years.map((y) => (
                   <option key={y}>{y}</option>
                 ))}
@@ -63,20 +55,19 @@ function UploadDocuments() {
 
               {/* TEXT FIELD */}
               <Col md={2}>
-                <Input type="text" />
+                <Input type="text" className="form-input"/>
               </Col>
 
               {/* FILE INPUT */}
               <Col md={3} className="file-col">
-                <Label className="choose-label">Choose File</Label>
-                <Input type="file" className="file-input" />
+                <Input type="file" className="file-input"/>
               </Col>
 
               {/* UPLOAD BTN */}
               <Col md={2}>
-                <Button color="success" className="upload-btn">
+                <button className="custom-btn">
                   Upload
-                </Button>
+                </button>
               </Col>
 
               {/* DOWNLOAD ICON */}

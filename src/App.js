@@ -14,6 +14,7 @@ import Process from './pages/Process/Process';
 import UploadDocuments from './pages/UploadDocuments/UploadDocuments';
 import Configuration from './pages/configuration/Configuration';
 import Home from './pages/home/Home';
+import Report from './pages/Reports/Reports';
 
 function App() {
   return (
@@ -48,6 +49,7 @@ function AppContent() {
             <Route path="deduction-master" element={<DeductionMaster />} />
             <Route path="pf-master" element={<PFMaster />} />
             <Route path="process" element={<Process />} />
+            <Route path="reports" element={<Report />} />
             <Route path="upload-docs" element={<UploadDocuments />} />
           </Route>
         </Routes>

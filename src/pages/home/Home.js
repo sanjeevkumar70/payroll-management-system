@@ -1,16 +1,8 @@
 // pages/Home.js
 
-import React from "react";
-import { Card, CardBody, Row, Col } from "reactstrap";
-import {
-  BsPeopleFill,
-  BsGearFill,
-  BsBank2,
-  BsFiles,
-  BsClipboardCheck,
-  BsCashStack
-} from "react-icons/bs";
 import "./home.scss";
+import { Card, CardBody, Row, Col } from "reactstrap";
+import { BsPeopleFill, BsGearFill, BsBank2, BsFiles, BsClipboardCheck, BsCashStack } from "react-icons/bs";
 
 function Home() {
   const items = [
@@ -18,7 +10,7 @@ function Home() {
     { title: "Allowance Master", icon: <BsCashStack />, path: "/allowance-master" },
     { title: "Deduction Master", icon: <BsClipboardCheck />, path: "/deduction-master" },
     { title: "Process", icon: <BsGearFill />, path: "/process" },
-    { title: "Upload Documents", icon: <BsFiles />, path: "/upload-documents" },
+    { title: "Upload Documents", icon: <BsFiles size={35} />, path: "/upload-docs" },
     { title: "Configuration", icon: <BsBank2 />, path: "/configuration" },
   ];
 
