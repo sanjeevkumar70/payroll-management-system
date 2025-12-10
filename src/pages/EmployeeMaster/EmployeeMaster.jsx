@@ -1,18 +1,9 @@
 // pages/EmployeeMaster.js
 
-import React, { useState } from "react";
-import Select from "react-select";
-import {
-  Card,
-  CardBody,
-  Form,
-  FormGroup,
-  Label,
-  Input,
-  Row,
-  Col,
-} from "reactstrap";
 import "./employee-master.scss";
+import Select from "react-select";
+import React, { useState } from "react";
+import { Card, CardBody, Form, Label, Input, Row, Col, } from "reactstrap";
 
 const allowanceOptions = [
   { value: "hra", label: "HRA" },
@@ -30,14 +21,27 @@ const deductionOptions = [
 ];
 
 function EmployeeMaster() {
-  const [empcode, setEmpcode] = useState("0001");
-  const [name, setName] = useState("Nikhil");
-  const [basic, setBasic] = useState("16000");
-  const [pfNo, setPfNo] = useState("");
-  const [esiNo, setEsiNo] = useState("");
-  const [allowances, setAllowances] = useState([]);
-  const [deductions, setDeductions] = useState([]);
+  const [formData, setFormData] = useState({
+    empcode: "0001",
+    name: "Nikhil",
+    basic: "16000",
+    pfNo: "",
+    esiNo: "",
+    allowances: [],
+    deductions: [],
+  });
 
+  // UNIVERSAL HANDLER FOR ALL FIELDS
+  const handleChange = (field, value) => {
+    setFormData((prev) => ({
+      ...prev,
+      [field]: value,
+    }));
+  };
+  const handleSave = () => {
+    console.log("Configuration Saved:", formData);
+    alert("Configuration Saved Successfully!");
+  };
   return (
     <div className="emp-wrapper">
       <Card className="emp-card shadow">
@@ -46,12 +50,13 @@ function EmployeeMaster() {
 
           <Form>
             <Row className="mb-3">
-              <Col md={3}>
+              <Col md={4}>
                 <Label>Empcode</Label>
                 <Input
                   type="select"
-                  value={empcode}
-                  onChange={(e) => setEmpcode(e.target.value)}
+                  className="select-input"
+                  value={formData.empcode}
+                  onChange={(e) => handleChange("empcode", e.target.value)}
                 >
                   <option>0001</option>
                   <option>0002</option>
@@ -59,42 +64,46 @@ function EmployeeMaster() {
                 </Input>
               </Col>
 
-              <Col md={5}>
+              <Col md={4}>
                 <Label>Name</Label>
                 <Input
                   type="text"
-                  value={name}
+                  className="select-input"
+                  value={formData.name}
                   placeholder="Enter name"
-                  onChange={(e) => setName(e.target.value)}
+                  onChange={(e) => handleChange("name", e.target.value)}
                 />
               </Col>
             </Row>
 
             <Row className="mb-4">
-              <Col md={3}>
+              <Col md={4}>
                 <Label>Basic Salary</Label>
                 <Input
                   type="number"
-                  value={basic}
-                  onChange={(e) => setBasic(e.target.value)}
+                  className="form-input"
+                  value={formData.basic}
+                  onChange={(e) => handleChange("basic", e.target.value)}
                 />
               </Col>
 
-              <Col md={3}>
-                <Label>PF NO</Label>
+              <Col md={4}>
+                <Label>PF No</Label>
                 <Input
                   type="text"
-                  value={pfNo}
-                  onChange={(e) => setPfNo(e.target.value)}
+                  className="form-input"
+                  value={formData.pfNo}
+                  onChange={(e) => handleChange("pfNo", e.target.value)}
                 />
               </Col>
 
-              <Col md={3}>
-                <Label>ESI NO</Label>
+              <Col md={4}>
+                <Label>ESI No</Label>
                 <Input
                   type="text"
-                  value={esiNo}
-                  onChange={(e) => setEsiNo(e.target.value)}
+                  className="form-input"
+                  value={formData.esiNo}
+                  onChange={(e) => handleChange("esiNo", e.target.value)}
                 />
               </Col>
             </Row>
@@ -103,27 +112,34 @@ function EmployeeMaster() {
               <Col md={6} className="mb-4">
                 <Label>Select Allowance</Label>
                 <Select
-                  options={allowanceOptions}
                   isMulti
-                  value={allowances}
-                  onChange={setAllowances}
-                  className="react-select-container"
+                  options={allowanceOptions}
+                  value={formData.allowances}
+                  className="select-input"
                   classNamePrefix="react-select"
                   placeholder="Choose Allowances"
+                  onChange={(selected) => handleChange("allowances", selected)}
                 />
               </Col>
 
               <Col md={6}>
                 <Label>Select Deduction</Label>
                 <Select
-                  options={deductionOptions}
                   isMulti
-                  value={deductions}
-                  onChange={setDeductions}
-                  className="react-select-container"
+                  options={deductionOptions}
+                  value={formData.deductions}
+                  className="select-input"
                   classNamePrefix="react-select"
                   placeholder="Choose Deductions"
+                  onChange={(selected) => handleChange("deductions", selected)}
                 />
+              </Col>
+            </Row>
+            <Row>
+              <Col md={12} className="mt-3">
+                <button className="custom-btn" onClick={handleSave}>
+                  Save employee data
+                </button>
               </Col>
             </Row>
           </Form>

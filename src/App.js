@@ -1,10 +1,7 @@
 // App.js
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
-// import AllowanceMaster from './components/AllowanceMaster';
-// import DeductionMaster from './components/DeductionMaster';
-// import PFMaster from './components/PFMaster';
-// import Process from './components/Process';
+import './App.css'
 import { AuthProvider, useAuth } from './auth/AuthContext';
 import './App.css';
 import Login from './pages/login/Login';

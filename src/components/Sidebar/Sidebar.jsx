@@ -26,8 +26,8 @@ function Sidebar() {
           <li><Link to="/deduction-master">Deduction Master</Link></li>
           <li><Link to="/pf-master">PF Master</Link></li>
           <li><Link to="/process">Process</Link></li>
+          <li><Link to="/process">Reports</Link></li>
           <li><Link to="/upload-docs">Upload document</Link></li>
-          <li><Link to="/process">Process</Link></li>
         </ul>
       </nav>
       <button className="logout-btn" onClick={handleLogout}>Logout</button>

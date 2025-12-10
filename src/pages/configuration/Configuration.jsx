@@ -1,19 +1,34 @@
 // pages/Configuration.js
 
-import React, { useState } from "react";
-import {
-  Card,
-  CardBody,
-  Row,
-  Col,
-  Input,
-  Label
-} from "reactstrap";
-import { BsEye, BsEyeSlash } from "react-icons/bs";
 import "./configuration.scss";
+import React, { useState } from "react";
+import { BsEye, BsEyeSlash } from "react-icons/bs";
+import { Card, CardBody, Row, Col, Input, Label, Button } from "reactstrap";
 
 function Configuration() {
   const [passwordVisible, setPasswordVisible] = useState(false);
+
+  // 🟩 ONE OBJECT FOR ALL FIELDS
+  const [formData, setFormData] = useState({
+    dbPath: "C:\\PRINTWEBMIS\\Webmis",
+    server: "",
+    database: "Webmis",
+    password: ""
+  });
+
+  // 🟦 UNIVERSAL HANDLER FOR ALL INPUTS
+  const handleChange = (field, value) => {
+    setFormData(prev => ({
+      ...prev,
+      [field]: value
+    }));
+  };
+
+  // SAVE BUTTON
+  const handleSave = () => {
+    console.log("Configuration Saved:", formData);
+    alert("Configuration Saved Successfully!");
+  };
 
   return (
     <div className="config-wrapper">
@@ -29,7 +44,9 @@ function Configuration() {
             <Col md={7}>
               <Input
                 type="text"
-                defaultValue="C:\\PRINTWEBMIS\\Webmis"
+                className="form-input"
+                value={formData.dbPath}
+                onChange={(e) => handleChange("dbPath", e.target.value)}
               />
             </Col>
           </Row>
@@ -42,8 +59,14 @@ function Configuration() {
             <Col md={3}>
               <Label>Server</Label>
             </Col>
-            <Col md={4}>
-              <Input type="text" placeholder="Server Name" />
+            <Col md={7}>
+              <Input
+                type="text"
+                value={formData.server}
+                className="form-input"
+                placeholder="Server Name"
+                onChange={(e) => handleChange("server", e.target.value)}
+              />
             </Col>
           </Row>
 
@@ -52,8 +75,13 @@ function Configuration() {
             <Col md={3}>
               <Label>Database</Label>
             </Col>
-            <Col md={4}>
-              <Input type="text" placeholder="Webmis" />
+            <Col md={7}>
+              <Input
+                type="text"
+                className="form-input"
+                value={formData.database}
+                onChange={(e) => handleChange("database", e.target.value)}
+              />
             </Col>
           </Row>
 
@@ -63,18 +91,30 @@ function Configuration() {
               <Label>Password</Label>
             </Col>
 
-            <Col md={4} className="password-wrapper">
+            <Col md={7} className="password-wrapper">
               <Input
                 type={passwordVisible ? "text" : "password"}
+                value={formData.password}
                 placeholder="********"
-                className="password-input"
+                className="password-input form-input"
+                onChange={(e) => handleChange("password", e.target.value)}
               />
+
               <span
                 className="toggle-icon"
                 onClick={() => setPasswordVisible(!passwordVisible)}
               >
                 {passwordVisible ? <BsEyeSlash /> : <BsEye />}
               </span>
+            </Col>
+          </Row>
+
+          {/* SAVE BUTTON */}
+          <Row>
+            <Col md={12} className="mt-3">
+              <button className="custom-btn" onClick={handleSave}>
+                Save Configuration
+              </button>
             </Col>
           </Row>
 

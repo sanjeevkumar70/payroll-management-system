@@ -1,0 +1,54 @@
+input {
+    border-radius: 10px;
+    border: 1px solid #d8d8d8;
+    padding-left: 12px;
+}
+
+
+label {
+    font-weight: 600;
+}
+
+.custom-btn {
+    padding: 10px 20px;
+    height: 45px;
+    border-radius: 5px;
+    background: #4b4fa8;
+    border: none;
+    font-weight: 600;
+    color: white;
+
+}
+
+Button .custom-btn:hover {
+    background: #393d85 !important;
+}
+
+.select-input {
+  min-height: 44px !important;
+  min-height: 44px !important;
+}
+
+.select-input .react-select__control {
+  min-height: 44px !important;
+  border-radius: 8px;
+  box-shadow: none;
+}
+
+.select-input .react-select__indicator-separator {
+  display: none !important;
+}
+.form-input {
+  height: 44px;
+  border-radius: 5px !important;
+  border: 1px solid #d8d8d8 !important;
+  padding-left: 10px !important;
+  font-size: 15px;
+  background: #fff;
+
+  /* &:focus {
+    border-color: #4c63d9 !important;
+    box-shadow: 0 0 0 3px rgba(76, 99, 217, 0.25) !important;
+    outline: none;
+  } */
+}

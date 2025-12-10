@@ -13,8 +13,8 @@ import {
 import "./process.scss";
 
 function Process() {
-  const [fromDate, setFromDate] = useState("");
-  const [toDate, setToDate] = useState("");
+  const [fromDate, setFromDate] = useState("2025-12-10");
+  const [toDate, setToDate] = useState("2025-12-10");
 
   const [empFrom, setEmpFrom] = useState("EM123");
   const [empTo, setEmpTo] = useState("EM223");
@@ -36,6 +36,7 @@ function Process() {
             </Col>
             <Col md={3}>
               <Input
+               placeholder="Select Date"
                 type="date"
                 value={fromDate}
                 onChange={(e) => setFromDate(e.target.value)}
@@ -54,9 +55,9 @@ function Process() {
             </Col>
 
             <Col md={2} className="d-flex align-items-end">
-              <Button color="primary" className="process-btn w-100">
+              <button  className="custom-btn">
                 Process
-              </Button>
+              </button>
             </Col>
           </Row>
 

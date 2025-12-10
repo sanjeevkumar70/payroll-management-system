@@ -1,49 +1,19 @@
 .emp-wrapper {
   padding: 40px;
-  background: #fdfbf3;
   min-height: 100vh;
 }
 
 .emp-card {
-  max-width: 850px;
+  max-width: 900px;
   margin: 0 auto;
   border-radius: 16px;
-  padding: 20px;
-  background: white;
+  padding: 25px;
+  background: #ffffff;
 
   .title {
     font-weight: 700;
     color: #1a1a1a;
   }
-
-  label {
-    font-weight: 600;
-  }
-
-  // input,
-  // .react-select__control {
-  //   height: 46px;
-  //   border-radius: 10px !important;
-  //   border: 1px solid #d8d8d8 !important;
-  //   padding: 4px 10px;
-  //   font-size: 15px;
-
-  //   &:focus {
-  //     border-color: #4c8bff !important;
-  //     box-shadow: 0 0 0 3px rgba(76, 139, 255, 0.25);
-  //   }
-  // }
-
-  // .react-select__menu {
-  //   border-radius: 10px;
-  // }
-
-  // .react-select__option--is-focused {
-  //   background: rgba(76, 139, 255, 0.1);
-  // }
-
-  // .react-select__option--is-selected {
-  //   background: #4c8bff !important;
-  //   color: white;
-  // }
 }
+
+
