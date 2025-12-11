@@ -31,6 +31,7 @@ function Report() {
               <Input
                 type="text"
                 value={empFrom}
+                className="form-input"
                 onChange={(e) => setEmpFrom(e.target.value)}
               />
             </Col>
@@ -42,6 +43,7 @@ function Report() {
               <Input
                 type="text"
                 value={empTo}
+                className="form-input"
                 onChange={(e) => setEmpTo(e.target.value)}
               />
             </Col>
@@ -50,6 +52,7 @@ function Report() {
               <Input
                 type="checkbox"
                 checked={allEmployees}
+                className="form-input"
                 onChange={(e) => setAllEmployees(e.target.checked)}
               />
               <Label className="ms-2">All Employees</Label>
@@ -67,6 +70,7 @@ function Report() {
             <Col md={3}>
               <Input
                 type="select"
+                className="form-input"
                 value={contractorCode}
                 onChange={(e) => setContractorCode(e.target.value)}
               >
@@ -80,6 +84,7 @@ function Report() {
               <Input
                 type="checkbox"
                 checked={allContractor}
+                className="form-input"
                 onChange={(e) => setAllContractor(e.target.checked)}
               />
               <Label className="ms-2">All Contractor</Label>

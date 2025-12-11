@@ -36,9 +36,10 @@ function Process() {
             </Col>
             <Col md={3}>
               <Input
-               placeholder="Select Date"
                 type="date"
                 value={fromDate}
+                className="form-input"
+                placeholder="Select Date"
                 onChange={(e) => setFromDate(e.target.value)}
               />
             </Col>
@@ -50,12 +51,13 @@ function Process() {
               <Input
                 type="date"
                 value={toDate}
+                className="form-input"
                 onChange={(e) => setToDate(e.target.value)}
               />
             </Col>
 
             <Col md={2} className="d-flex align-items-end">
-              <button  className="custom-btn">
+              <button className="custom-btn">
                 Process
               </button>
             </Col>
@@ -71,6 +73,7 @@ function Process() {
               <Input
                 type="text"
                 value={empFrom}
+                className="form-input"
                 onChange={(e) => setEmpFrom(e.target.value)}
               />
             </Col>
@@ -82,6 +85,7 @@ function Process() {
               <Input
                 type="text"
                 value={empTo}
+                className="form-input"
                 onChange={(e) => setEmpTo(e.target.value)}
               />
             </Col>
@@ -90,6 +94,7 @@ function Process() {
               <Input
                 type="checkbox"
                 checked={allEmployees}
+                className="form-input"
                 onChange={(e) => setAllEmployees(e.target.checked)}
               />
               <Label className="ms-2">All Employees</Label>
@@ -108,6 +113,7 @@ function Process() {
               <Input
                 type="select"
                 value={contractorCode}
+                className="select-input"
                 onChange={(e) => setContractorCode(e.target.value)}
               >
                 <option>C323</option>

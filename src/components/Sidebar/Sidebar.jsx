@@ -82,7 +82,7 @@ function Sidebar() {
             {routes.map((item) => (
               <li key={item.url} className="custom-link">
                 <NavLink to={item.url}>
-                  <item.icon className="menu-icon" />
+                  <item.icon className="menu-icon" size={22}/>
                   {item.label}
                 </NavLink>
               </li>
